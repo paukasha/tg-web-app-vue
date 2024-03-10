@@ -5,16 +5,18 @@
 </template>
 
 <script>
-const tg = window.Telegram.WebApp
 export default {
   name: 'App',
-  components: {},
+  components: {
+    tg: ''
+  },
   mounted() {
-    tg.ready()
+    this.tg = window.Telegram.WebApp
+    this.tg.ready()
   },
   methods: {
     onClose() {
-      tg.close()
+      this.tg.close()
     }
   }
 }
